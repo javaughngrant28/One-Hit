@@ -9,6 +9,7 @@ export type Attribues = {
 
 local function CreateAttributes(player: Player)
 	local Data = PlayerProfiles[player].Data
+
 	player:SetAttribute('Loaded',true)
 	player:SetAttribute('Coins', Data.Coins)
 end
