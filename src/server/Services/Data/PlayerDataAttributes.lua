@@ -4,6 +4,8 @@ local PlayerProfiles = require(script.Parent.PlayerProfiles)
 
 export type Attribues = {
 	Loaded: boolean,
+	XboxKeybind: string,
+
 	Coins: number,
 }
 
@@ -11,6 +13,8 @@ local function CreateAttributes(player: Player)
 	local Data = PlayerProfiles[player].Data
 
 	player:SetAttribute('Loaded',true)
+	player:SetAttribute('XboxKeybind')
+
 	player:SetAttribute('Coins', Data.Coins)
 end
 

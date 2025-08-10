@@ -19,8 +19,7 @@ local ButtonImages = {
 
 local function ButtonActivatedConnection(button: ImageButton) : RBXScriptConnection
     return button.Activated:Connect(function()
-        local value = not Player:GetAttribute('ShiftlockEnabled') :: boolean
-        Shiftlock.SetEnabled(value)
+       Shiftlock.Toggle()
     end)
 end
 
@@ -34,7 +33,7 @@ end
 -- Toggles Visiblity Of Shiflock button depending on player input type
 local function InputAttributeObserver(button: ImageButton): () -> ()
     return Observers.observeAttribute(Player,'InputType',function(value: Enum.PreferredInput)
-        button.Visible = value == Enum.PreferredInput.KeyboardAndMouse
+        button.Visible = value ~= Enum.PreferredInput.KeyboardAndMouse
     end)
 end
 

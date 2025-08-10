@@ -122,7 +122,8 @@ function KeyMapper.GetKeyString(input)
 end
 
 -- Function to map a string representation back to the Enum input
-function KeyMapper.GetEnumFromString(inputString)
+function KeyMapper.GetEnumFromString(inputString: string) : Enum.KeyCode?
+	if not inputString then return end
 	return reverseMapping[inputString] or error(`Unknown Input: {inputString}`)
 end
 

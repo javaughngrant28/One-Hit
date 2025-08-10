@@ -21,7 +21,13 @@ local function EnableShiftlock(value: boolean)
 end
 
 
+local function ToggleShiftlock()
+	local value = not Player:GetAttribute('ShiftlockEnabled')
+	EnableShiftlock(value)
+end
+
 
 return {
     SetEnabled = EnableShiftlock,
+	Toggle = ToggleShiftlock,
 }
